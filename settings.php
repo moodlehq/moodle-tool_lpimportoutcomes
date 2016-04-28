@@ -23,7 +23,7 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-if (!empty($CFG->enableoutcomes) && \tool_lp\api::is_enabled()) {
+if (!empty($CFG->enableoutcomes) && get_config('core_competency', 'enabled')) {
 
     // Import outcomes.
     $temp = new admin_externalpage(
@@ -32,6 +32,6 @@ if (!empty($CFG->enableoutcomes) && \tool_lp\api::is_enabled()) {
         new moodle_url('/admin/tool/lpimportoutcomes/index.php'),
         array('tool/lpimportoutcomes:outcomesimport')
     );
-    $ADMIN->add('toollprootpage', $temp);
+    $ADMIN->add('competencies', $temp);
 
 }

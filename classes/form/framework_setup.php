@@ -97,9 +97,9 @@ class framework_setup extends \tool_lp\form\competency_framework {
         $mform->addHelpButton('visible', 'visible', 'tool_lp');
 
         // Set taxonomies but do not ask the users to set them up as there will only be one level.
-        for ($i = 1; $i <= \tool_lp\competency_framework::get_taxonomies_max_level(); $i++) {
-            $mform->addElement('hidden', "taxonomies[$i]", \tool_lp\competency_framework::TAXONOMY_COMPETENCY);
-            $mform->setConstant("taxonomies[$i]", \tool_lp\competency_framework::TAXONOMY_COMPETENCY);
+        for ($i = 1; $i <= 4; $i++) {
+            $mform->addElement('hidden', "taxonomies[$i]", \core_competency\competency_framework::TAXONOMY_COMPETENCY);
+            $mform->setConstant("taxonomies[$i]", \core_competency\competency_framework::TAXONOMY_COMPETENCY);
             $mform->setType("taxonomies[$i]", PARAM_ALPHANUMEXT);
             $this->extraforeignfields[] = "taxonomies[$i]";
         }

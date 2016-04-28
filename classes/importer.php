@@ -25,7 +25,7 @@
 namespace tool_lpimportoutcomes;
 
 use stdClass;
-use \tool_lp\api;
+use \core_competency\api;
 
 /**
  * Outcomes importer.
@@ -46,7 +46,7 @@ class importer {
      *
      * @param stdClass $frameworkdata Framework configuration.
      * @param array $scaleconfigurations Indexes are scale IDs, values are scale configuration.
-     * @return array (\tool_lp\competency_framework, \tool_lp\competency[])
+     * @return array (\core_competency\competency_framework, \core_competency\competency[])
      */
     public function create(stdClass $frameworkdata, array $scaleconfigurations) {
         global $DB;
